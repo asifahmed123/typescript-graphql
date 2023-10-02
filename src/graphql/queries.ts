@@ -1,4 +1,5 @@
-import { gql } from '../__generated__/gql';
+import { gql } from "./__generated__";
+
 
 export const GET_SHIPS = gql(`
 query Ships {
