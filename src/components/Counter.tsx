@@ -17,26 +17,41 @@ const initialState: initialStateType = {
   decrement: 0,
 };
 
+// const reducer = (state: initialStateType, action: ActionType) => {
+//   switch (action.type) {
+//     case "increment":
+//       return { ...state, increment: state.increment + action.payload }; // Fix here
+//     case "reset":
+//       return { ...state, increment: 0 }; // Fix here
+//     case "decrement":
+//       return { ...state, decrement: state.decrement - action.payload }; // Fix here
+
+//     default:
+//       throw new Error("Unhandled action type: " + action.type);
+//   }
+// };
+
 const reducer = (state: initialStateType, action: ActionType) => {
   switch (action.type) {
     case "increment":
-      return { ...state, increment: state.increment + action.payload }; // Fix here
+      return { ...state, increment: state.increment + action.payload };
     case "reset":
-      return { ...state, increment: 0 }; // Fix here
+      return { ...state, increment: 0 };
     case "decrement":
-      return { ...state, decrement: state.decrement - 1 }; // Fix here
+      return { ...state, increment: state.increment - action.payload }; // Fix here
 
     default:
       throw new Error("Unhandled action type: " + action.type);
   }
 };
 
+
 const Counter = () => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   return (
     <div className="w-full h-[100vh] mx-auto flex flex-col justify-center items-center">
-      <h2 className="bg-lime-900 w-40 text-center p-2 rounded mb-10 font-bold">
+      <h2 className="bg-lime-600 w-40 text-center text-white p-2 rounded mb-10 font-bold">
         Count: {state.increment} {/* Fix here */}
       </h2>
       <div>

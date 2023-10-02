@@ -1,12 +1,14 @@
 import './App.css'
-import Counter from './components/Counter';
+import DisplayShips from './components/DisplayShips';
+import Navbar from './components/Navbar';
 
 function App() {
 
   return (
     <>
       <div>
-        <Counter></Counter>
+        <Navbar></Navbar>
+        <DisplayShips></DisplayShips>
       </div>
     </>
   )
